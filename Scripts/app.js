@@ -122,8 +122,9 @@ let app;
         $("ul").on("click", ".editButton", function(){
             //sets the css display to show
             // as of now all of the text boxes are being shown
-            $("li").parent($(".editTextInput").show());
-
+            $(".editTextInput").show();
+           
+           
             //if a button is clicked while in the text box
             $('.editTextInput').on("keypress", function(press) {
                 //if the enter button is clicked
@@ -135,7 +136,7 @@ let app;
                     $('#taskText').text($(".editTextInput").val());
 
                     //sets the css display to hidden
-                    $("li").parent($(".editTextInput").hide());
+                   $(".editTextInput").hide();
                     
                 }
             });
@@ -146,8 +147,7 @@ let app;
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
             //if the delete button is activated then a pop up that asks the user if they want to delete    
-            console.log($(this).parent());
-            console.log($(this).parent().parent());
+  
 
            // creates a dialog box that asks the user if they are sure
             if(confirm("Are You Sure?"))
