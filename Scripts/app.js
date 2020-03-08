@@ -117,7 +117,18 @@ let app;
 
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
-           
+            $("li").parent($(".editTextInput").show());
+
+            $('.editTextInput').on("keypress", function(press) {
+                if (press.keyCode == 13) {
+                    //console.log($(".editTextInput").val())
+                    $('#taskText').text($(".editTextInput").val());
+                    $("li").parent($(".editTextInput").hide());
+                    
+                }
+        });
+        
+          
         });
 
         // Task 1 c
