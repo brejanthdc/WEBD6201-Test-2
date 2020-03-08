@@ -1,3 +1,6 @@
+//Name: Brejanth Rajendran
+//StudentId: 100557484
+//Date: 2020/03/08
 class Contact
 {
     constructor(contactName = "", emailAddress = "", contactNumber = "", contactMessage = "")
@@ -103,7 +106,7 @@ let app;
         // Task 1 a
         $("#newTaskButton").on("click", function(){
  
-
+            // When new task button is clicked a new li will be made with the text the user inputed, it will be appened to the bottom of the list
         $(`<li class="list-group-item" id="task"> 
             <span id="taskText">`+$("#taskTextInput").val()+`</span> 
             <span class="float-right"> 
@@ -117,26 +120,35 @@ let app;
 
         // Task 1 b
         $("ul").on("click", ".editButton", function(){
+            //sets the css display to show
+            // as of now all of the text boxes are being shown
             $("li").parent($(".editTextInput").show());
 
+            //if a button is clicked while in the text box
             $('.editTextInput').on("keypress", function(press) {
+                //if the enter button is clicked
                 if (press.keyCode == 13) {
                     //console.log($(".editTextInput").val())
+
+                    //changes old text to new text
+                    //only the top link works because it grabs text from the first avalaible textbox and places it in the first list
                     $('#taskText').text($(".editTextInput").val());
+
+                    //sets the css display to hidden
                     $("li").parent($(".editTextInput").hide());
                     
                 }
-        });
+            });
         
           
         });
 
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
-                    
+            //if the delete button is activated then a pop up that asks the user if they want to delete    
             if(confirm("Are You Sure?"))
             {
-                
+                // deletes the selected list
                 $("#task").remove(); 
             }
         
