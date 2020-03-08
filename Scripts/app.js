@@ -112,9 +112,12 @@ let app;
 
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
-           
-          
-            
+                    
+            if(confirm("Are You Sure?"))
+            {
+                  
+                $("#task").remove(); 
+            }
         
         });
     }
