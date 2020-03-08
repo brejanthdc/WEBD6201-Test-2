@@ -146,10 +146,15 @@ let app;
         // Task 1 c
         $("ul").on("click", ".deleteButton", function(){
             //if the delete button is activated then a pop up that asks the user if they want to delete    
+            console.log($(this).parent());
+            console.log($(this).parent().parent());
+
+           // creates a dialog box that asks the user if they are sure
             if(confirm("Are You Sure?"))
-            {
-                // deletes the selected list
-                $("#task").remove(); 
+            {  
+                //removes the task
+                // one parent goes to the span tag, and the next goes to the actual list tag
+                $(this).parent().parent().remove();
             }
         
         });
